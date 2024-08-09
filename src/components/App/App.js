@@ -8,6 +8,8 @@ import SearchBar from '../SearchBar/SearchBar';
 
 
 function App() {
+  const [articles, setArticles] = useState([]);
+  
   return (
     <main className="App">
       <h1>My App</h1>
