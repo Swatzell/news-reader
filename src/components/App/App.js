@@ -1,4 +1,11 @@
 import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ArticleList from '../ArticleList/ArticleList';
+import ArticleDetail from '../ArticleDetails/ArticleDetail';
+import SearchBar from '../SearchBar/SearchBar';
+
+
 
 function App() {
   return (
