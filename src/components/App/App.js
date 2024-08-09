@@ -11,9 +11,15 @@ function App() {
   const [articles, setArticles] = useState([]);
   
   return (
-    <main className="App">
-      <h1>My App</h1>
-    </main>
+    <Router>
+    <div>
+      <SearchBar setArticles={setArticles} />
+      <Routes>
+        <Route path="/" element={<ArticleList articles={articles} />} />
+        <Route path="/article/:id" element={<ArticleDetail articles={articles} />} />
+      </Routes>
+    </div>
+  </Router>
   );
 }
 
