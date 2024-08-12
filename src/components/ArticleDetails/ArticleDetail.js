@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import './ArticleDetail.css';
 
 function ArticleDetail({ articles }) {
   const { id } = useParams();
@@ -10,7 +11,7 @@ function ArticleDetail({ articles }) {
   }
 
   return (
-    <div>
+    <div className="article-detail">
       <h1>{article.title}</h1>
       <img src={article.urlToImage} alt={article.title} style={{ width: '400px' }} />
       <p>{article.content}</p>
