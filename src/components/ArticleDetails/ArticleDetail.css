@@ -1,0 +1,27 @@
+.article-detail {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .article-detail p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+  
+  .article-detail .source {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .article-detail .date {
+    color: #777;
+  }
+  
+  @media (max-width: 600px) {
+    .article-detail {
+      padding: 15px;
+    }
+  }
