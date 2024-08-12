@@ -29,12 +29,20 @@ const SearchBar = ({ setArticles }) => {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
+
   return (
     <div className="search-bar">
       <input 
         type="text" 
         value={query} 
         onChange={(e) => setQuery(e.target.value)} 
+        onKeyDown={handleKeyDown}
         placeholder="Search for news..."
       />
       <button onClick={handleSearch}>Search</button>
