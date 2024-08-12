@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import './ArticleDetail.css';
+import BackToResultsButton from '../BackToResultsButton/BackToResultsButton';
 
 function ArticleDetail({ articles }) {
   const { id } = useParams();
@@ -12,6 +13,7 @@ function ArticleDetail({ articles }) {
 
   return (
     <div className="article-detail">
+        <BackToResultsButton />
       <h1>{article.title}</h1>
       <img src={article.urlToImage} alt={article.title} style={{ width: '400px' }} />
       <p>{article.content}</p>
