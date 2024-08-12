@@ -32,3 +32,21 @@ describe('News Reader Search - Happy Path', () => {
     cy.contains('Bitcoin News 2').should('be.visible');
   });
 });
+
+describe('News Reader Search - No Results Found', () => {
+  it('should display a message when no results are found', () => {
+    cy.intercept('GET', '**/v2/everything?q=nonexistent*', {
+      statusCode: 200,
+      body: {
+        status: "ok",
+        totalResults: 0,
+        articles: []
+      }
+    }).as('getSearchResults');
+
+    cy.visit('http://localhost:3000/');
+    cy.get('input[placeholder="Search for news..."]').type('nonexistent{enter}');
+    cy.wait('@getSearchResults');
+    cy.contains('No articles found. Please try a different search.').should('be.visible');
+  });
+});
