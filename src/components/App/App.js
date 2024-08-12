@@ -5,7 +5,7 @@ import ArticleList from '../ArticleList/ArticleList';
 import ArticleDetail from '../ArticleDetails/ArticleDetail';
 import Home from '../Home/Home';
 import BackToHomeButton from '../BackHomeButton/BackHomeButton';
-
+import NotFound from '../NotFound/NotFound';
 
 
 function App() {
@@ -42,7 +42,8 @@ function App() {
                 <ArticleDetail articles={articles} />
               </RenderWithBackButton>
             } 
-          />
+            />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </Router>
